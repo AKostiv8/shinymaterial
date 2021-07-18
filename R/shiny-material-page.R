@@ -3,6 +3,7 @@
 #' Build a shinymaterial page.
 #' @param ... The UI elements to place in the page.
 #' @param title String. The title of the page.
+#' @param right_menu UI. For menu buttons aside
 #' @param nav_bar_fixed Boolean. Should the nav bar remain fixed on the screen?
 #' @param nav_bar_color Color of the nav bar. Leave blank for the default color. Visit \url{https://materializecss.com/color.html} for a list of available colors.
 #' @param background_color Page background color. Leave blank for the default color. Visit \url{https://materializecss.com/color.html} for a list of available colors.
@@ -21,7 +22,7 @@
 #'   background_color = "blue lighten-4",
 #'   shiny::tags$h1("Page Content")
 #' )
-material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color = NULL, background_color = "grey lighten-4", font_color = NULL, include_fonts = FALSE, include_nav_bar = TRUE, include_icons = FALSE, materialize_in_www = FALSE, primary_theme_color = NULL, secondary_theme_color = NULL){
+material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color = NULL, background_color = "grey lighten-4", font_color = NULL, include_fonts = FALSE, include_nav_bar = TRUE, include_icons = FALSE, materialize_in_www = FALSE, primary_theme_color = NULL, secondary_theme_color = NULL, right_menu = NULL){
   
   materialize_version <- "1.0.0"
   materialicons_version <- "v42"
@@ -163,7 +164,8 @@ material_page <- function(..., title = "", nav_bar_fixed = FALSE, nav_bar_color 
           )
         ),
         shiny::HTML(paste0("&nbsp;", title))
-      )
+      ),
+      right_menu
     )
   )
   
