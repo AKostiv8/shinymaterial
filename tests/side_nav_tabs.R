@@ -9,6 +9,15 @@ if(interactive()){
     material_side_nav(
       fixed = TRUE,
       # Place side-nav tabs within side-nav
+      material_side_nav_tabs_collapsible(
+        collapsible_menu_arrow_name = "Drop", 
+        side_nav_tabs = c(
+          "Example Side-Nav Tab 1" = "example_side_nav_tab_11",
+          "Example Side-Nav Tab 2" = "example_side_nav_tab_12"
+        ),
+        icons = c("cloud", "none"),
+        color = "teal"
+      ),
       material_side_nav_tabs(
         side_nav_tabs = c(
           "Example Side-Nav Tab 1" = "example_side_nav_tab_1",
@@ -18,14 +27,14 @@ if(interactive()){
       )
     ),
     # Define side-nav tab content
-    material_side_nav_tab_content(
-      side_nav_tab_id = "example_side_nav_tab_1",
-      tags$h1("First Side-Nav Tab Content")
-    ),
-    material_side_nav_tab_content(
-      side_nav_tab_id = "example_side_nav_tab_2",
-      tags$h1("Second Side-Nav Tab Content")
-    )
+    # material_side_nav_tab_content(
+    #   side_nav_tab_id = "example_side_nav_tab_1",
+    #   tags$h1("First Side-Nav Tab Content")
+    # ),
+    # material_side_nav_tab_content(
+    #   side_nav_tab_id = "example_side_nav_tab_2",
+    #   tags$h1("Second Side-Nav Tab Content")
+    # )
   )
   
   
