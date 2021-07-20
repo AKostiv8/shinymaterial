@@ -3,6 +3,7 @@
 #' Build a shinymaterial file input.
 #' @param input_id String. The input identifier used to access the value.
 #' @param label String. The file input button text.
+#' @param accept String of accepteble format.
 #' @param color String. The color of the file input. Leave empty for the default color. Visit \url{https://materializecss.com/color.html} for a list of available colors.  \emph{This input requires using color hex codes, rather than the word form. E.g., "#ef5350", rather than "red lighten-1".}
 #' @examples
 #' if (interactive()) {
@@ -47,7 +48,7 @@
 #' }
 material_file_input <- function(input_id,
                                 label = "File",
-                                color = NULL) {
+                                color = NULL, accept = NULL) {
   
   if(!is.null(color)){
     
@@ -71,39 +72,80 @@ material_file_input <- function(input_id,
     file_input_style <- shiny::tags$div()
   }
   
-  
-  create_material_object(
-    js_file =
-      "shiny-material-file-input.js",
-    material_tag_list =
-      shiny::tagList(
-        shiny::tags$div(
-          class = "file-field input-field",
+  if(!is.null(accept)){
+    
+    create_material_object(
+      js_file =
+        "shiny-material-file-input.js",
+      material_tag_list =
+        shiny::tagList(
           shiny::tags$div(
-            class = "btn",
-            style = 
-              ifelse(
-                is.null(color),
-                "",
-                paste0("background-color:", color)
-              ),
-            shiny::tags$span(label),
-            shiny::tags$input(
-              id = input_id,
-              class = "shiny-material-file-input",
-              type = "file"
+            class = "file-field input-field",
+            shiny::tags$div(
+              class = "btn",
+              style = 
+                ifelse(
+                  is.null(color),
+                  "",
+                  paste0("background-color:", color)
+                ),
+              shiny::tags$span(label),
+              shiny::tags$input(
+                id = input_id,
+                class = "shiny-material-file-input",
+                type = "file",
+                accept = accept
+              )
+            ),
+            shiny::tags$div(
+              class = "file-path-wrapper",
+              shiny::tags$input(
+                class = "file-path validate",
+                type="text",
+                name = paste0("shiny-material-file-path-wrapper-", input_id)
+              )
             )
           ),
+          file_input_style
+        )
+    )
+    
+  } else {
+    create_material_object(
+      js_file =
+        "shiny-material-file-input.js",
+      material_tag_list =
+        shiny::tagList(
           shiny::tags$div(
-            class = "file-path-wrapper",
-            shiny::tags$input(
-              class = "file-path validate",
-              type="text",
-              name = paste0("shiny-material-file-path-wrapper-", input_id)
+            class = "file-field input-field",
+            shiny::tags$div(
+              class = "btn",
+              style = 
+                ifelse(
+                  is.null(color),
+                  "",
+                  paste0("background-color:", color)
+                ),
+              shiny::tags$span(label),
+              shiny::tags$input(
+                id = input_id,
+                class = "shiny-material-file-input",
+                type = "file"
+              )
+            ),
+            shiny::tags$div(
+              class = "file-path-wrapper",
+              shiny::tags$input(
+                class = "file-path validate",
+                type="text",
+                name = paste0("shiny-material-file-path-wrapper-", input_id)
+              )
             )
-          )
-        ),
-        file_input_style
-      )
-  )
+          ),
+          file_input_style
+        )
+    )
+  }
+  
+  
 }

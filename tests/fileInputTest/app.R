@@ -8,7 +8,7 @@ if(interactive()){
     primary_theme_color = "blue", 
     secondary_theme_color = "green",
     tags$h1("Page Content"),
-    material_file_input(input_id = "example_file_input", label = "ok")
+    material_file_input(input_id = "example_file_input", label = "ok", accept = '.csv')
   )
   
   server <- function(input, output, session) {
