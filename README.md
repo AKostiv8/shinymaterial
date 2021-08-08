@@ -7,4 +7,4 @@
 Install CRAN version:        `install.packages("shinymaterial")`
 
 ### Development Version:
-Install Development version: `remotes::install_github("ericrayanderson/shinymaterial")`
+Install Development version: `remotes::install_github("AKostiv8/shinymaterial")`
