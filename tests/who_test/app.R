@@ -53,7 +53,29 @@ ui <- material_page(
   # Define tab content
   material_tab_content(
     tab_id = "quantitative_tab",
-    tags$h1("First Tab Content")
+    tags$h1("First Tab Content"),
+    tags$div(class = "row",
+             tags$div(class = "col s12 m12",
+                      material_collapsible(
+                        material_collapsible_element(icon_title = 'account_box', 
+                                                     title = 'Test 1', 
+                                                     content = div(span('1234'), span('567'))
+                                                     ),
+                        material_collapsible_element(icon_title = 'account_box', 
+                                                     title = 'Test 2', 
+                                                     content = div(span('1234'), span('567'))
+                        ),
+                        material_collapsible_element(icon_title = 'account_box', 
+                                                     title = 'Test 3', 
+                                                     content = div(span('1234'), span('567'))
+                        ),
+                        material_collapsible_element(icon_title = 'account_box', 
+                                                     title = 'Test 4', 
+                                                     content = div(span('1234'), span('567'))
+                        )
+                      )  
+             )
+             )
   ),
   material_tab_content(
     tab_id = "qualitative_tab",

@@ -5,4 +5,6 @@ $(document).ready(function () {
     $(document).on("click", ".shiny-material-modal-trigger", function () {
         $(this).trigger("shown");
     });
+    
+    $('.collapsible').collapsible();
 });

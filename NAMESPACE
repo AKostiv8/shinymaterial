@@ -41,4 +41,5 @@ export(update_material_radio_button)
 export(update_material_slider)
 export(update_material_switch)
 export(update_material_text_box)
-
+export(material_collapsible)
+export(material_collapsible_element)

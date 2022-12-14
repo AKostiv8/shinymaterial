@@ -1,13 +1,14 @@
 Package: shinymaterial
 Type: Package
 Title: Implement Material Design in Shiny Applications
-Version: 1.2.0.9100
+Version: 2.0.0.0
 Authors@R: c(
     person("Eric", "Anderson", role = c("aut", "cre"), email = "eric.ray.anderson@gmail.com"),
     person("Alvin", "Wang", role = c("ctb", "cph"), comment = "Materialize CSS library"),
     person("Alan", "Chang", role = c("ctb", "cph"), comment = "Materialize CSS library"),
     person("Alex", "Mark", role = c("ctb", "cph"), comment = "Materialize CSS library"),
-    person("Kevin", "Louie", role = c("ctb", "cph"), comment = "Materialize CSS library")
+    person("Kevin", "Louie", role = c("ctb", "cph"), comment = "Materialize CSS library"),
+    person("Anastasiia", "Kostiv", role = c("ctb", "cph"), comment = "akostiv11@gmail.com")
     )
 Maintainer: Eric Anderson <eric.ray.anderson@gmail.com>
 Description: Allows shiny developers to incorporate UI elements based on Google's Material design. See <https://material.io/guidelines/> for more information.
