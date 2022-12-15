@@ -85,5 +85,6 @@ ui <- material_page(
 
 server <- function(input, output, session) {
   
+  
 }
 shinyApp(ui = ui, server = server)
